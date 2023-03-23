@@ -22,10 +22,14 @@ public class ListaNumeros {
     public static Double minimoLista(List<Double> listaNum){
 
     }
-    public static Double mediaLista(List<Double> listaNum){ /*obtener objeto del medio de la lista*/
+
+    /*obtener objeto del medio de la lista*/
+    public static Double mediaLista(List<Double> listaNum){
 
     }
-    public static Double modaLista(List<Double> listaNum){ /*el elemento que aparece más veces*/
+
+    /*el elemento que aparece más veces*/
+    public static Double modaLista(List<Double> listaNum){
 
     }
 }
