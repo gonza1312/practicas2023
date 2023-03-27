@@ -12,7 +12,9 @@ public class Main {
 //        llamarCalculadoraDividir();
 //        llamarCalculadoraMultiplicar();
 //        llamarCalculadoraPotencia();
-        llamarSumaLista();
+//        llamarSumaLista();
+//        llamarMultiplicarLista();
+//        llamarPromedio();
     }
     private static void llamarHola(){
         HelloWorld.saludarMundo();
@@ -51,8 +53,27 @@ public class Main {
         listaSuma.add(4.3);
         listaSuma.add(2.2);
         listaSuma.add(6.5);
-        listaSuma.add(1D);
+        listaSuma.add(10.0);
         double resultado = ListaNumeros.sumarLista(listaSuma);
         ImprimePantalla.imprimirPantalla("La suma de la lista es: "+resultado);
     }
+    private static void llamarMultiplicarLista(){
+        List<Double> listaMultiplica = new ArrayList<Double>();
+        listaMultiplica.add(4.3);
+        listaMultiplica.add(2.2);
+        listaMultiplica.add(6.5);
+        listaMultiplica.add(10.0);
+        double resultado = ListaNumeros.multiplicarLista(listaMultiplica);
+        ImprimePantalla.imprimirPantalla("La multiplicación de la lista es: "+resultado);
+    }
+    private static void llamarPromedio(){
+        List<Double> listaPromedio = new ArrayList<Double>();
+        listaPromedio.add(4.3);
+        listaPromedio.add(2.2);
+        listaPromedio.add(6.5);
+        listaPromedio.add(10.0);
+        double resultado = ListaNumeros.promediarLista(listaPromedio);
+        ImprimePantalla.imprimirPantalla("El promedio de la lista es: "+resultado);
+    }
+
 }
