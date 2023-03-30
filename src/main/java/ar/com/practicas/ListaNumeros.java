@@ -1,9 +1,6 @@
 package ar.com.practicas;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ListaNumeros {
     public static double sumarLista(List <Double> listaNum){
@@ -118,5 +115,17 @@ public class ListaNumeros {
             }
         }
         return masRepetido;
+    }
+
+    /**
+     * Se quiere saber el promedio de notas de una escuela.
+     * El promedio se debe calcular como el promedio del promedio de cada curso
+     */
+    public static Double promedioEscuela(List<Double>... cursos) {
+        List<List<Double>> todasLasNotasDeTodosLosCursos = Arrays.stream(cursos.clone()).toList();
+        //Lista de Cursos:
+        //Cada Curso de una Lista de Notas
+        // ListCursos<ListaNotas>
+        return 0D;
     }
 }

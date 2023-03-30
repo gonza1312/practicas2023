@@ -145,4 +145,7 @@ public class Main {
         ImprimePantalla.imprimirResultadoLista(listaModa,"El valor mas repetido de la lista es: ",resultado);
     }
 
+    private static void llamarPromedioEscuela() {
+
+    }
 }
