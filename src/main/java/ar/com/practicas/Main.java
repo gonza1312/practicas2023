@@ -146,6 +146,6 @@ public class Main {
     }
 
     private static void llamarPromedioEscuela() {
-
+        ListaNumeros.promedioEscuela(List.of(10D, 4.5, 8D), List.of(9.3, 8.7));
     }
 }
