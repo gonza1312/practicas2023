@@ -122,10 +122,18 @@ public class ListaNumeros {
      * El promedio se debe calcular como el promedio del promedio de cada curso
      */
     public static Double promedioEscuela(List<Double>... cursos) {
+        if (cursos==null){
+            return 0.0;
+        }
+        double cantAlumnos;
+        double notas;
+        double cantCursos;
+        double promedio;
         List<List<Double>> todasLasNotasDeTodosLosCursos = Arrays.stream(cursos.clone()).toList();
         //Lista de Cursos:
         //Cada Curso de una Lista de Notas
         // ListCursos<ListaNotas>
+
         return 0D;
     }
 }
