@@ -1,4 +1,4 @@
-package ar.com.practicas;
+package ar.com.practicas.numeros;
 
 import java.util.*;
 
@@ -125,15 +125,82 @@ public class ListaNumeros {
         if (cursos==null){
             return 0.0;
         }
-        double cantAlumnos;
-        double notas;
-        double cantCursos;
-        double promedio;
         List<List<Double>> todasLasNotasDeTodosLosCursos = Arrays.stream(cursos.clone()).toList();
         //Lista de Cursos:
         //Cada Curso de una Lista de Notas
         // ListCursos<ListaNotas>
+        List<Double> promedios=new ArrayList<>();
+        for (int i = 0; i < todasLasNotasDeTodosLosCursos.size(); i++) {
+            List<Double> curso= todasLasNotasDeTodosLosCursos.get(i);
+            double suma=0;
+            for (int j = 0; j < curso.size(); j++) {
+                double notaAlumno = curso.get(j);
+                suma=notaAlumno+suma;
+            }
+            double promedio = suma/curso.size();
+            promedios.add(promedio);
+        }
+        double sumaPromedio=0;
+        for (int i = 0; i < promedios.size(); i++) {
+            double promedioCurso=promedios.get(i);
+            sumaPromedio=promedioCurso+sumaPromedio;
+        }
+        double promedioGral= sumaPromedio/promedios.size();
 
-        return 0D;
+        return promedioGral;
+    }
+
+    /**
+     * Se quiere saber el promedio de notas de una escuela.
+     * El promedio se debe calcular como el promedio del promedio de cada curso
+     */
+    public static Double promedioEscuelaCon1For(List<List<Double>> todasLasNotasDeTodosLosCursos) {
+        if (todasLasNotasDeTodosLosCursos==null){
+            return 0.0;
+        }
+        List<Double> promedios = new ArrayList<>();
+        for (int i = 0; i < todasLasNotasDeTodosLosCursos.size(); i++) {
+            double promedio = ListaNumeros.promediarLista(todasLasNotasDeTodosLosCursos.get(i));
+            promedios.add(promedio);
+        }
+
+        double promedioGral= ListaNumeros.promediarLista(promedios);
+
+        return promedioGral;
+    }
+
+    public static Double promedioGralEscuela(List<List<Double>> todasLasNotasDeTodosLosCursos) {
+        if (todasLasNotasDeTodosLosCursos==null){
+            return 0.0;
+        }
+        double sumaLista=0;
+        double suma = 0;
+        for (int i = 0; i < todasLasNotasDeTodosLosCursos.size(); i++) {
+            //Forma: Haciendo el promedio a mano
+            sumaLista = ListaNumeros.sumarLista(todasLasNotasDeTodosLosCursos.get(i))+sumaLista;
+            suma=todasLasNotasDeTodosLosCursos.get(i).size()+suma;
+        }
+        double promedioGral = sumaLista/suma;
+        return promedioGral;
+    }
+
+    public static Double promedioGralEscuela2(List<List<Double>> todasLasNotasDeTodosLosCursos) {
+        if (todasLasNotasDeTodosLosCursos==null){
+            return 0.0;
+        }
+        List<Double> listaDeNotas = new ArrayList<>();
+
+        for (int i = 0; i < todasLasNotasDeTodosLosCursos.size(); i++) {
+            List<Double> curso = todasLasNotasDeTodosLosCursos.get(i);
+            //Forma: Haciendo el promedio reutilizando codigo
+            for (int j = 0; j < curso.size(); j++) {
+                Double nota = curso.get(j);
+                listaDeNotas.add(nota);
+            }
+        }
+
+        Double promedioGral = ListaNumeros.promediarLista(listaDeNotas);
+
+        return promedioGral;
     }
 }

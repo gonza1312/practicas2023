@@ -1,4 +1,4 @@
-package ar.com.practicas;
+package ar.com.practicas.numeros;
 
 import java.util.List;
 

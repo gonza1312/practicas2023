@@ -1,4 +1,4 @@
-package ar.com.practicas;
+package ar.com.practicas.numeros;
 
 public class Calculadora {
     public static int suma(int num1, int num2){
