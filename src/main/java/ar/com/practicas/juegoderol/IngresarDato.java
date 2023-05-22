@@ -8,5 +8,8 @@ public class IngresarDato {
         Scanner entradaEscaner = new Scanner (System.in);
         texto=entradaEscaner.nextLine();
         return (texto.equalsIgnoreCase("si"));
+
     }
+
+
 }

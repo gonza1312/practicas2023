@@ -3,9 +3,11 @@ package ar.com.practicas.juegoderol;
 public class Controller {
     public static void ejecutarJuego(){
         boolean continuar=true;
+        continuar=IngresarDato.ingresarBoolean("Desea continuar?");
         while (continuar){
-            continuar=IngresarDato.ingresarBoolean("Desea continuar?");
+            Menu.iniciarMenu();
         }
+
 
 //        Crear una clase menu en la cual tenga un menu que tenga como opciones ataque, ataque esp, defender, abandonar, salir. Enumerados.
 //        Si elegis salir que salga del juego. Crear otro metodo que se llame decidir que sepa resolver la elección
