@@ -2,8 +2,8 @@ package ar.com.practicas.juegoderol;
 
 public class Controller {
     public static void ejecutarJuego(){
-        boolean continuar=true;
-        continuar=IngresarDato.ingresarBoolean("Desea continuar?");
+        boolean continuar=IngresarDato.ingresarBoolean("Desea continuar?");;
+
         while (continuar){
             Menu.iniciarMenu();
         }

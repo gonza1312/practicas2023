@@ -1,5 +1,7 @@
 package ar.com.practicas.juegoderol;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -9,30 +11,30 @@ public class Menu {
 
     }
 
-    public static void guardarPersonaje(){
-        String[] personaje = new String[2];
+    public static List<String> guardarPersonaje(){
+        List<String> guardarPersonaje = new ArrayList<>();
         boolean guardar = true;
-        guardar=IngresarDato.ingresarBoolean("Desea crear un personaje?");
         Scanner teclado = new Scanner(System.in);
-        if (guardar){
-            for (int i = 0; i < personaje.length; i++) {
-
-                System.out.println("Ingrese nombre de personaje: ");
-                personaje[i]=teclado.nextLine();
-                break;
-            }
+        while (true){
+            System.out.println(IngresarDato.ingresarBoolean("Desea guardar un personaje?"));
+            System.out.println("Ingrese el nombre: ");
+            String nombre = teclado.nextLine();
+            guardarPersonaje.add(nombre);
         }
+
+    }
+
+    public static void cargarPersonaje(List<String> guardarPersonaje){
         boolean cargar = true;
         cargar=IngresarDato.ingresarBoolean("Desea cargar un personaje?");
-        teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
         if (cargar){
-            for (int j = 0; j < personaje.length; j++) {
+            for (int j = 0; j < guardarPersonaje.size(); j++) {
 
-                System.out.println(personaje[j]);
+                System.out.println(guardarPersonaje());
                 break;
             }
         }
-
     }
 
     public static void accionPersonaje(){
