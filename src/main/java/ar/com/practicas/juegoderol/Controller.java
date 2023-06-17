@@ -6,6 +6,9 @@ public class Controller {
 
         while (continuar){
             Menu.iniciarMenu();
+            while (true){
+                Menu.accionPersonaje();
+            }
         }
 
 
