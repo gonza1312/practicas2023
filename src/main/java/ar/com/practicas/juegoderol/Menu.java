@@ -23,8 +23,14 @@ public class Menu {
                 guardarPersonajes.add(nombre);
                 System.out.println("Desea guardar otro personaje? (si/no)");
                 decision = teclado.nextLine();
+                if (!decision.equalsIgnoreCase("si")){
+                    break;
+                }
             }
-            break;
+            else {
+                break;
+            }
+
         }
         return guardarPersonajes;
     }
@@ -39,6 +45,12 @@ public class Menu {
             }
             System.out.println("Desea cargar otro personaje? (si/no)");
             decision = teclado.nextLine();
+            if (!decision.equalsIgnoreCase("si")){
+                break;
+            }
+            else {
+                break;
+            }
         }
     }
 
