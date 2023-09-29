@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Menu {
     public static void iniciarMenu (){
         List<String> personajes = guardarPersonaje();
-        cargarPersonaje(guardarPersonaje());
+        cargarPersonaje(personajes);
     }
 
     public static List<String> guardarPersonaje() {
@@ -21,13 +21,8 @@ public class Menu {
                 System.out.println("Ingrese el nombre: ");
                 String nombre = teclado.nextLine();
                 guardarPersonajes.add(nombre);
-                System.out.println("Desea guardar otro personaje? (si/no)");
-                decision = teclado.nextLine();
-                if (!decision.equalsIgnoreCase("si")){
-                    break;
-                }
             }
-            else {
+            else if (decision.equalsIgnoreCase("no")){
                 break;
             }
 
@@ -37,18 +32,14 @@ public class Menu {
 
     public static void cargarPersonaje(List<String> guardarPersonajes) {
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Desea cargar un personaje? (si/no)");
-        String decision = teclado.nextLine();
-        while (decision.equalsIgnoreCase("si")) {
-            for (String nombre : guardarPersonajes) {
-                System.out.println(nombre);
-            }
-            System.out.println("Desea cargar otro personaje? (si/no)");
-            decision = teclado.nextLine();
-            if (!decision.equalsIgnoreCase("si")){
-                break;
-            }
-            else {
+        while (true) {
+            System.out.println("Desea cargar un personaje? (si/no)");
+            String decision = teclado.nextLine();
+            if (decision.equalsIgnoreCase("si")){
+                for (String nombre : guardarPersonajes) {
+                    System.out.println(nombre);
+                }
+            } else if (decision.equalsIgnoreCase("no")){
                 break;
             }
         }
@@ -57,7 +48,7 @@ public class Menu {
 
     public static void accionPersonaje(){
         int decision;
-        System.out.println("Ataque = 1 "+ "Ataque esp = 2 "+ "Defender = 3 " + "Abandonar = 4 " + "Salir = 5");
+        System.out.println("Ataque = 1/ "+ "Ataque esp = 2/ "+ "Defender = 3/ " + "Abandonar = 4/ " + "Salir = 5");
         Scanner teclado = new Scanner(System.in);
         decision= teclado.nextInt();
         switch (decision) {
