@@ -1,5 +1,6 @@
 package ar.com.practicas.juegoderol;
 
+import javax.swing.*;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,33 +46,43 @@ public class Menu {
         }
     }
 
-
     public static void accionPersonaje(){
         int decision;
-        System.out.println("Ataque = 1/ "+ "Ataque esp = 2/ "+ "Defender = 3/ " + "Abandonar = 4/ " + "Salir = 5");
-        Scanner teclado = new Scanner(System.in);
-        decision= teclado.nextInt();
-        switch (decision) {
-            case 1:
-                System.out.println("Usted ha realizado un Ataque");
-                break;
-            case 2:
-                System.out.println("Usted ha realizado un Ataque esp");
-                break;
-            case 3:
-                System.out.println("Usted ha realizado un Defender");
-                break;
-            case 4:
-                System.out.println("Usted ha abandonado");
-                break;
-            case 5:
-                System.out.println("Usted ha salido");
+        Personaje vida = new Personaje();
+        int vida1 = vida.getVida();
+        int vidaActual=100;
+        for (int i = 0; i < vidaActual; i++) {
+            System.out.println("Ataque = 1/ "+ "Ataque esp = 2/ "+ "Defender = 3/ " + "Abandonar = 4/ ");
+            Scanner teclado = new Scanner(System.in);
+            decision= teclado.nextInt();
+            switch (decision) {
+                case 1:
+                    int ataque = 20;
+                    System.out.println("Usted ha realizado un Ataque");
+                    vida.realizarAtaque(ataque);
+                    vidaActual = vida.getVida();
+                    System.out.println("La vida es: " + vidaActual);
+                    break;
+                case 2:
+                    int ataqueEsp=30;
+                    System.out.println("Usted ha realizado un Ataque especial");
+                    vida.realizarAtaque(ataqueEsp);
+                    vidaActual = vida.getVida();
+                    System.out.println("La vida es: " + vidaActual);
+                    break;
+                case 3:
+                    System.out.println("Usted se ha defendido");
+                    break;
+                case 4:
+                    System.out.println("Usted ha abandonado");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+            }
+            if (vidaActual<=0){
                 System.exit(0);
-                break;
-            default:
-                System.out.println("Opción inválida");
+            }
         }
-
     }
-
 }
